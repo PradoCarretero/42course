@@ -45,7 +45,8 @@ OBJ = $(SRC:.c=.o)
 INCLUDE = libft.h
 BONUS_SOURCES = ft_lstnew_bonus.c \
 						ft_lstsize_bonus.c \
-						ft_lstadd_front_bonus.c
+						ft_lstadd_front_bonus.c \
+						ft_lstlast_bonus.c
 
 BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 
