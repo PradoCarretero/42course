@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:12:58 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/25 14:03:26 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:59:46 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	count_words(char const *s, char c)
 	int	i;
 	int	d;
 
+	if (!s[0])
+		return (0);
 	i = 0;
 	d = 0;
 	while (s[i])

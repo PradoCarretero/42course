@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:47:27 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/01/18 13:17:29 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:36:29 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	a = (char *)src;
 	b = (char *)dst;
-	if (a == '\0' && b == '\0')
-		return (0);
-	if (n == 48)
-		return (0);
+	if (!a && !b)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
