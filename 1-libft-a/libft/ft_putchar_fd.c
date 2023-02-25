@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:05:53 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/18 12:10:38 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:31:09 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-
+	write (fd, &c, 1);
 }
