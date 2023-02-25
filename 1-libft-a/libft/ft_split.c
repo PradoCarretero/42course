@@ -6,75 +6,76 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:12:58 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/18 18:04:35 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:03:26 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	**ft_split(char const *s, char c)
+int	count_words(char const *s, char c)
 {
 	int	i;
-	int d;
-	int	j;
-	/* int	str[ft_strlen((char *)s)]; */
-	int	str[100];
-	char **out;
-	char *sub;
+	int	d;
 
-	d = 0;
 	i = 0;
-
-
+	d = 0;
 	while (s[i])
 	{
-		while(s[i] == c)
+		while (s[i] == c)
 		{
 			i++;
 			if (s[i] == '\0')
-				break;
+				break ;
 		}
-		str[d] = i;
-		printf("\n%d", str[d]);
-		while(s[i] != c && s[i])
-		{
+		while (s[i] != c && s[i])
 			i++;
-		}
 		d++;
 	}
-
-	out = (char**)ft_calloc((d + 1), sizeof(char*));
-	j = 0;
-	while (s[i])
-	{
-		while(s[i] == c)
-		{
-			i++;
-			if (s[i] == '\0')
-				break;
-		}
-		printf("\n%d", str[d]);
-		sub = malloc();
-		while(s[i] != c && s[i])
-		{
-			i++;
-			
-		}
-		j = 0;
-		d++;
-	}
-
+	return (d);
 }
 
-int	main(void)
+char	**fill_str(char const *s, char c, int start, char **out)
 {
-	char const *s;
-	char c;
+	int	i;
+	int	d;
 
-	c = 'H';
-	s = "olaHcacaHojoHHHlo";
-	/* printf("%s", ft_strchr("hola munlafdsladsf", 'l')); */
-	/* printf("%s", ft_split(s, c)); */
-	ft_split(s, c);
-	return (0);
+	i = 0;
+	d = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (i > start)
+		{
+			out[d] = ft_substr(s, start, (i - start));
+			if (!out[d])
+			{
+				free(out);
+				return (NULL);
+			}
+			d++;
+		}
+	}
+	out[d] = 0;
+	return (out);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		d;
+	char	**out;
+	char	**p;
+	int		start;
+
+	if (!s)
+		return (0);
+	out = (char **) malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!out)
+		return (NULL);
+	out = fill_str(s, c, start, out);
+	return (out);
 }
