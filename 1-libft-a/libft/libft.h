@@ -6,18 +6,21 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:37:08 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/25 16:35:50 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:27:31 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ctype.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
@@ -52,5 +55,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
+int	ft_lstsize(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
 
 #endif

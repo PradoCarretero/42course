@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 10:50:56 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/25 16:58:24 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:19:04 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		end--;
 	}
-	return (ft_substr (s1, start, (end-start)));
+	return (ft_substr (s1, start, (end - start)));
 }

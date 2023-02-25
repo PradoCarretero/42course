@@ -41,18 +41,21 @@ SRC = ft_isalpha.c \
 						ft_putendl_fd.c \
 						ft_putnbr_fd.c
 
-#BONUSSRC = 
-
 OBJ = $(SRC:.c=.o)
 INCLUDE = libft.h
+BONUS_SOURCES = ft_lstnew_bonus.c \
+						ft_lstsize_bonus.c \
+						ft_lstadd_front_bonus.c
 
-#BONUSOBJ = $(BONUSSRC: .c=.o)
+BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 
-#funciones o comandos (?)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJ)
+
+bonus: $(BONUS_OBJECTS)
+	@ar r $(NAME) $(BONUS_OBJECTS)
 
 %.o: %.c
 	$(CC) $(CCFLAGS) -c -o $@ $<
@@ -63,6 +66,7 @@ so:
 
 clean:
 	$(RM) $(OBJ)
+	$(RM) $(BONUS_OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)

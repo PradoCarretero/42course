@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 16:35:11 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/25 17:15:32 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:19:49 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		if (n == -2147483648)
 		{
-		ft_putstr_fd("-2147483648", fd);
-		return;
+			ft_putstr_fd("-2147483648", fd);
+			return ;
 		}
 		n = n * (-1);
 		ft_putchar_fd('-', fd);
@@ -33,5 +33,5 @@ void	ft_putnbr_fd(int n, int fd)
 		c = n % 10;
 		ft_putnbr_fd(n / 10, fd);
 	}
-		ft_putchar_fd(c + '0', fd);
+	ft_putchar_fd(c + '0', fd);
 }
