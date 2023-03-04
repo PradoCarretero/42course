@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:12:58 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/03/04 12:05:46 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:00:15 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ int	count_words(char const *s, char c)
 			if (s[i] == '\0')
 				break ;
 		}
+		if (s[i] != '\0')
+			d++;
 		while (s[i] != c && s[i])
 			i++;
-		d++;
 	}
 	return (d);
 }
