@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:12:58 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/03/04 13:00:15 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:46:42 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,10 @@ char	**fill_str(char const *s, char c, int start, char **out)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		d;
 	char	**out;
-	char	**p;
 	int		start;
 
+	start = 0;
 	if (!s)
 		return (0);
 	out = (char **) malloc((count_words(s, c) + 1) * sizeof(char *));

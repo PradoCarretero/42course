@@ -3,7 +3,7 @@ LIB = ar rcs
 RM = rm -f
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 SRC = ft_isalpha.c \
@@ -63,7 +63,7 @@ bonus: $(BONUS_OBJECTS)
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:

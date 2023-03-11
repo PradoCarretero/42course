@@ -6,7 +6,7 @@
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:36:02 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/25 20:49:19 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:29:06 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*pointer;
 	size_t			size;
 	unsigned int	i;
-	unsigned int	len_s;
 
 	if (!s)
 		return (NULL);

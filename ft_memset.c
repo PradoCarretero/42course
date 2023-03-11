@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcarrete <pcarrete@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:47:27 by pcarrete          #+#    #+#             */
-/*   Updated: 2023/02/04 09:54:06 by pcarrete         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:09:41 by pcarrete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	char	*a;
-	char	*b;
+	unsigned char	*ch;
+	int				i;
 
-	a = (char *)src;
-	b = (char *)dst;
-	if (a == '\0' && b == '\0')
-		return (0);
-	if (len == 48)
-		return (0);
+	ch = (unsigned char *) b;
 	i = 0;
-	while (i < len)
+	while (i < (int)len)
 	{
-		b[i] = a[i];
+		ch[i] = c;
 		i++;
 	}
-	return (dst);
+	return (ch);
 }
-
-/*int   main(void)
-{
-   char dst[50] = "";
-   char src[] = "caracol";
-   char *result;
-   result = ft_memcpy(dst, src, 0);
-   printf("%s\n", result);
-   printf("%s\n", memmove(dst, src, 0));
-   return (0);
-}*/
